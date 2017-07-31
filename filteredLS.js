@@ -25,7 +25,7 @@ let filesArr;
 
 fs.readdir(process.argv[2],(err,list)=>{
     if (err){
-        throw err;
+        throw new Error('Whoops!');
     }else{
         filesArr = list.filter(item=> path.extname(item).match('.' + pathName));
         filesArr.forEach(item=> console.log(item))
