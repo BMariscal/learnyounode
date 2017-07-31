@@ -12,7 +12,7 @@ const fs = require('fs');
 let final;
 fs.readFile(process.argv[2],'utf8',(err,data)=>{
     if (err){
-        throw err;
+        throw new Error('Whoops!');
     }else{
         final = data.split('\n');
         console.log(final.length-1)
